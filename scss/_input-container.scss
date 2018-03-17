@@ -1,0 +1,52 @@
+@import "variables";
+
+.input-container {
+  margin: 0 auto;
+  background: $dark-blue;
+  width: 90vw;
+  height: 67vh;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+
+  .input {
+    display: grid;
+    grid-template-columns: 12% 2fr 1fr;
+    align-items: center;
+    height: 25%;
+    padding: 0 5%;
+    cursor: default;
+
+    .payment-method {
+      -webkit-appearance: none;
+      position: relative;
+      border: 3px solid $lightest-blue;
+      border-radius: 50%;
+      margin: 0;
+      height: 1.7em;
+      width: 1.7em;
+      outline: none;
+
+      &:checked {
+        background: $light-blue;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 0.7em;
+          width: 0.7em;
+          border-radius: 50%;
+          background: white;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 513px;
+    height: 297px;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500|Karla:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/app.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/app.js"></script>
+	<title>CSS/Sass | Primera tarea</title>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Great, that's &#163;124.97!</h1>
+
+		<!-- Form start -->
+		<form>
+
+			<!-- Input container start -->
+			<div class="input-container">
+				<div class="input">
+					<input type="radio" name="payment-method" class="payment-method" id="paypal" value="paypal">
+					<label for="paypal">PayPal</label>
+					<span class="card"><img src="img/paypal.png" alt="PayPal Card"></span>
+				</div>
+				<div class="input">
+					<input type="radio" name="payment-method" class="payment-method" id="credit-card" value="credit-card">
+					<label for="credit-card">Debit/credit card</label>
+
+					<!-- Card container start -->
+					<div class="card-container">
+						<span class="mobile-card-wrapper">
+							<span class="card">
+								<img src="img/card.png" alt="Credit card">
+							</span>
+							<i class="material-icons">arrow_drop_down</i>
+						</span>
+
+						<!-- Mobile card list start -->
+						<div class="mobile-card-list">
+							<span class="card mobile">
+							<img src="img/visa.png" alt="Visa card">
+						</span>
+							<span class="card mobile">
+								<img src="img/mastercard.png" alt="Mastercard card">
+							</span>
+							<span class="card mobile">
+								<img src="img/maestro.png" alt="Maestro card">
+							</span>
+						</div>
+						<!-- Mobile card list end -->
+
+						<span class="card">
+							<img src="img/visa.png" alt="Visa card">
+						</span>
+							<span class="card">
+								<img src="img/mastercard.png" alt="Mastercard card">
+							</span>
+							<span class="card">
+								<img src="img/maestro.png" alt="Maestro card">
+							</span>
+					</div>
+					<!-- Card container end -->
+
+				</div>
+			</div>
+			<!-- Input container end -->
+
+			<button type="submit"><i class="material-icons">lock_outline</i><span>Finish and pay</span></button>
+		</form>
+		<!-- Form end -->
+
+	</div>
+</body>
+</html>
