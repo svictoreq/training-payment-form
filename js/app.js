@@ -11,10 +11,20 @@ $(document).ready(function() {
 			$(formButton).removeClass('button-card');
 			$(formButton).addClass('button-paypal');
 			$(formButton).html(paypalLogo);
+			$('.output-container').addClass('paypal')
+			$('.input-container').addClass('paypal');
+			setTimeout(function() {
+				$('form .container').addClass('paypal');
+			}, 500)
 		} else {
 			$(formButton).removeClass('button-paypal');
 			$(formButton).addClass('button-card');
 			$(formButton).html(cardButton);
+			$('form .container').removeClass('paypal');
+			setTimeout(function() {
+				$('.input-container').removeClass('paypal');
+				$('.output-container').removeClass('paypal');
+			}, 500)
 		}
 	});
 
