@@ -16,58 +16,86 @@
 
 		<!-- Form start -->
 		<form>
+			<!-- Container start -->
+			<div class="container">
 
-			<!-- Input container start -->
-			<div class="input-container">
-				<div class="input">
-					<input type="radio" name="payment-method" class="payment-method" id="paypal" value="paypal">
-					<label for="paypal">PayPal</label>
-					<span class="card"><img src="img/paypal.png" alt="PayPal Card"></span>
-				</div>
-				<div class="input">
-					<input type="radio" name="payment-method" class="payment-method" id="credit-card" value="credit-card">
-					<label for="credit-card">Debit/credit card</label>
+				<!-- Input container start -->
+				<div class="input-container">
+					<div class="input">
+						<input type="radio" name="payment-method" class="payment-method" id="paypal" value="paypal">
+						<label for="paypal">PayPal</label>
+						<span class="card"><img src="img/paypal.png" alt="PayPal Card"></span>
+					</div>
+					<div class="input">
+						<input type="radio" name="payment-method" class="payment-method" id="credit-card" value="credit-card" checked="checked">
+						<label for="credit-card">Debit/credit card</label>
 
-					<!-- Card container start -->
-					<div class="card-container">
-						<span class="mobile-card-wrapper">
-							<span class="card">
-								<img src="img/card.png" alt="Credit card">
+						<!-- Card container start -->
+						<div class="card-container">
+							<span class="mobile-card-wrapper">
+								<span class="card">
+									<img src="img/card.png" alt="Credit card">
+								</span>
+								<i class="material-icons">arrow_drop_down</i>
 							</span>
-							<i class="material-icons">arrow_drop_down</i>
-						</span>
 
-						<!-- Mobile card list start -->
-						<div class="mobile-card-list">
-							<span class="card mobile">
-							<img src="img/visa.png" alt="Visa card">
-						</span>
-							<span class="card mobile">
+							<!-- Mobile card list start -->
+							<div class="mobile-card-list">
+								<span class="card mobile">
+									<img src="img/visa.png" alt="Visa card">
+								</span>
+								<span class="card mobile">
+									<img src="img/mastercard.png" alt="Mastercard card">
+								</span>
+								<span class="card mobile">
+									<img src="img/maestro.png" alt="Maestro card">
+								</span>
+							</div>
+							<!-- Mobile card list end -->
+
+							<span class="card">
+								<img src="img/visa.png" alt="Visa card">
+							</span>
+							<span class="card">
 								<img src="img/mastercard.png" alt="Mastercard card">
 							</span>
-							<span class="card mobile">
+							<span class="card">
 								<img src="img/maestro.png" alt="Maestro card">
 							</span>
 						</div>
-						<!-- Mobile card list end -->
+						<!-- Card container end -->
 
-						<span class="card">
-							<img src="img/visa.png" alt="Visa card">
-						</span>
-							<span class="card">
-								<img src="img/mastercard.png" alt="Mastercard card">
-							</span>
-							<span class="card">
-								<img src="img/maestro.png" alt="Maestro card">
-							</span>
 					</div>
-					<!-- Card container end -->
-
 				</div>
-			</div>
-			<!-- Input container end -->
+				<!-- Input container end -->
 
-			<button type="submit"><i class="material-icons">lock_outline</i><span>Finish and pay</span></button>
+				<!-- Output container start -->
+				<div class="output-container">
+					<div class="output card">
+						<label for="card-number">Card number</label>
+						<input type="text" name="card-numer" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
+					</div>
+					<div class="output multiple">
+						<div class="output">
+							<label for="expiry">Expiry</label>
+							<input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY">
+						</div>
+						<div class="output">
+							<label for="cvc">CVC</label>
+							<input type="text" name="cvc" id="cvc" maxlength="3" placeholder="123">
+						</div>
+					</div>
+				</div>
+				<!-- Output container end -->
+
+			</div>
+			<!-- Container end -->
+
+			<button type="submit" class="button-card">
+				<i class="material-icons">lock_outline</i>
+				<span>Finish and pay</span>
+			</button>
+
 		</form>
 		<!-- Form end -->
 

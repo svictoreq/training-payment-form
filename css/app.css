@@ -1,18 +1,26 @@
-.input-container {
+.container {
+  box-sizing: border-box;
   margin: 0 auto;
   background: #1E2148;
   width: 90vw;
+  min-height: 400px;
   height: 67vh;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 700; }
+
+.input-container {
+  width: 100%;
+  height: 50%; }
   .input-container .input {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 12% 2fr 1fr;
     align-items: center;
-    height: 25%;
+    min-height: 50%;
     padding: 0 5%;
-    cursor: default; }
+    cursor: default;
+    border-bottom: 1px solid #404477; }
     .input-container .input .payment-method {
       -webkit-appearance: none;
       position: relative;
@@ -38,6 +46,50 @@
     .input-container {
       width: 513px;
       height: 297px; } }
+
+.output-container {
+  font-size: 18px;
+  height: 50%;
+  width: 100%;
+  background: #242852;
+  border-radius: 0 0 5px 5px; }
+  .output-container .output {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 12% 2fr 1fr;
+    align-items: center;
+    min-height: 50%;
+    padding: 0 5%;
+    cursor: default;
+    border-bottom: 1px solid #404477;
+    grid-template-columns: 1fr;
+    width: 100%; }
+    .output-container .output:last-child {
+      border-bottom: none; }
+    .output-container .output label {
+      font-weight: 400;
+      color: #8F93C1; }
+    .output-container .output.multiple {
+      grid-template-columns: 1.25fr 0.75fr; }
+      .output-container .output.multiple .output {
+        border: none;
+        grid-template-columns: repeat(2, 1fr); }
+    .output-container .output.card {
+      grid-template-rows: 3rem 2rem; }
+    .output-container .output.multiple .output {
+      padding: 0; }
+    .output-container .output input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      background: #242852;
+      border: none;
+      outline: none;
+      color: white;
+      font-family: "Fira Mono", monospaced;
+      font-size: 1em; }
+      .output-container .output input::placeholder {
+        color: #404477; }
 
 .card {
   width: 2.5em;
@@ -87,28 +139,41 @@
       height: 7.8em; }
 
 form button {
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  padding: 1rem 0;
-  margin-top: 10%;
-  background: #13C1BF;
-  color: white;
-  font-size: 18px;
-  font-weight: 700; }
-  form button i.material-icons {
-    vertical-align: middle;
-    margin-right: 0.5rem; }
+  max-height: 70px; }
+  form button.button-card {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 0;
+    margin-top: 10%;
+    font-size: 18px;
+    font-weight: 700;
+    background: #13C1BF;
+    color: white; }
+    form button.button-card i.material-icons {
+      vertical-align: middle;
+      margin-right: 0.5rem; }
+  form button.button-paypal {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 0;
+    margin-top: 10%;
+    font-size: 18px;
+    font-weight: 700;
+    background: #F8F7F5;
+    padding: 0.5em 0; }
   form button span {
     vertical-align: middle; }
 
 body {
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  align-items: center;
   margin: 0;
   padding: 2rem 0;
   background: #171A3D;

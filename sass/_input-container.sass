@@ -1,21 +1,11 @@
 @import variables
 
 .input-container
-	margin: 0 auto
-	background: $dark-blue
-	width: 90vw
-	height: 67vh
-	border-radius: 5px
-	font-size: 18px
-	font-weight: 700
+	width: 100%
+	height: 50%
 
 	.input
-		display: grid
-		grid-template-columns: 12% 2fr 1fr
-		align-items: center
-		height: 25%
-		padding: 0 5%
-		cursor: default
+		+form-div
 
 		.payment-method
 			-webkit-appearance: none
