@@ -1,0 +1,24 @@
+.container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+  background: $dark-blue;
+  width: 100%;
+  min-height: 400px;
+  height: 67vh;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: $box-shadow;
+  transition: 0.5s;
+
+  &.paypal {
+    min-height: 34vh;
+    height: 34vh;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-height: 0;
+    height: 297px;
+  }
+}

@@ -40,10 +40,14 @@
       top: 20%;
       right: -10%;
       opacity: 0.5;
-      transition: transform 0.4s;
+      transition: 0.4s;
 
       @media screen and (min-width: 480px) and (orientation: landscape) {
         right: 15%;
+      }
+
+      &.paypal {
+        opacity: 0;
       }
 
       &.opened {
@@ -79,12 +83,16 @@
     padding-bottom: 0.3em;
     background: $dark-blue;
     border-radius: 0 0 5px 5px;
-    transition: 0.4s ease;
+    transition: height 0.4s ease;
     height: 0;
     overflow: hidden;
 
     &.opened {
       height: 7.8em;
+
+      &.paypal {
+        opacity: 0;
+      }
     }
 
     @media screen and (min-width: 768px) {
