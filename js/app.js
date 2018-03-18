@@ -11,8 +11,10 @@ $(document).ready(function() {
 			$(formButton).removeClass('button-card');
 			$(formButton).addClass('button-paypal');
 			$(formButton).html(paypalLogo);
+			$('.mobile-card-wrapper').addClass('paypal');
 			$('.output-container').addClass('paypal')
 			$('.input-container').addClass('paypal');
+			$('.mobile-card-wrapper i').addClass('paypal');
 			setTimeout(function() {
 				$('form .container').addClass('paypal');
 			}, 500)
@@ -21,9 +23,11 @@ $(document).ready(function() {
 			$(formButton).addClass('button-card');
 			$(formButton).html(cardButton);
 			$('form .container').removeClass('paypal');
+			$('.mobile-card-wrapper').removeClass('paypal');
 			setTimeout(function() {
 				$('.input-container').removeClass('paypal');
 				$('.output-container').removeClass('paypal');
+				$('.mobile-card-wrapper i').removeClass('paypal');
 			}, 500)
 		}
 	});
@@ -32,9 +36,24 @@ $(document).ready(function() {
 	const mobileCardList = $('.mobile-card-list');
 	const card = $('.mobile-card-wrapper .card');
 	const icon = $('.mobile-card-wrapper i');
-	$(card).on('click', function() {
-		$(mobileCardList).toggleClass('opened');
-		$(icon).toggleClass('opened');
+
+	$(card).on('click', function(e) {
+		if ($(icon).hasClass('paypal')) {
+			return false;
+		} else {
+			e.stopPropagation();
+			$(mobileCardList).toggleClass('opened');
+			$(icon).toggleClass('opened');
+
+			if ( $(mobileCardList).hasClass('opened') ) {
+				setTimeout(function() {
+					$(document).on('click', function() {
+						$(mobileCardList).removeClass('opened')
+						$(icon).removeClass('opened')
+					});
+				}, 400)
+			}
+		}
 	});
 
 	// Text manipulation

@@ -188,10 +188,12 @@
       top: 20%;
       right: -10%;
       opacity: 0.5;
-      transition: transform 0.4s; }
+      transition: 0.4s; }
       @media screen and (min-width: 480px) and (orientation: landscape) {
         .card-container span.mobile-card-wrapper i.material-icons {
           right: 15%; } }
+      .card-container span.mobile-card-wrapper i.material-icons.paypal {
+        opacity: 0; }
       .card-container span.mobile-card-wrapper i.material-icons.opened {
         transform: rotate(-180deg); }
     .card-container span.mobile-card-wrapper .card {
@@ -214,11 +216,13 @@
     padding-bottom: 0.3em;
     background: #1E2148;
     border-radius: 0 0 5px 5px;
-    transition: 0.4s ease;
+    transition: height 0.4s ease;
     height: 0;
     overflow: hidden; }
     .card-container .mobile-card-list.opened {
       height: 7.8em; }
+      .card-container .mobile-card-list.opened.paypal {
+        opacity: 0; }
     @media screen and (min-width: 768px) {
       .card-container .mobile-card-list {
         display: none; } }
