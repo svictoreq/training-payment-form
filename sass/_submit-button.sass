@@ -9,7 +9,17 @@
 	margin-top: 10%
 	font-size: 18px
 	font-weight: 700
+	box-shadow: $box-shadow
 	transition: 1s
+
+	@media screen and (min-width: 480px) and (orientation: landscape)
+		margin-top: 4%
+
+	@media screen and (min-width: 768px)
+		font-size: 20px
+
+	@media screen and (min-width: 1024px)
+		cursor: pointer
 
 form
 	button

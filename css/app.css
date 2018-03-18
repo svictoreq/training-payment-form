@@ -1,6 +1,7 @@
 .container {
   box-sizing: border-box;
   margin: 0 auto;
+  overflow: hidden;
   background: #1E2148;
   width: 100%;
   min-height: 400px;
@@ -8,15 +9,24 @@
   border-radius: 5px;
   font-size: 18px;
   font-weight: 700;
+  box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
   transition: 0.5s; }
   .container.paypal {
     min-height: 34vh;
     height: 34vh; }
+  @media screen and (min-width: 768px) {
+    .container {
+      min-height: 0;
+      height: 297px; } }
 
 .input-container {
   width: 100%;
   height: 50%;
   transition: height 0.5s; }
+  @media only screen and (min-width: 768px) {
+    .input-container {
+      width: 513px;
+      height: 160px; } }
   .input-container.paypal {
     height: 100%; }
     .input-container.paypal .input:last-child {
@@ -30,31 +40,49 @@
     padding: 0 5%;
     cursor: default;
     border-bottom: 1px solid #404477; }
+    @media screen and (min-width: 768px) {
+      .input-container .input {
+        grid-template-columns: 11% 1.3fr 1fr; } }
+    @media screen and (min-width: 1024px) {
+      .input-container .input label {
+        cursor: pointer; } }
     .input-container .input .payment-method {
       -webkit-appearance: none;
+      -moz-appearance: none;
+      appearace: none;
       position: relative;
-      border: 3px solid #8DE5E3;
+      background: #292c51;
       border-radius: 50%;
+      border: 2px solid #404477;
       margin: 0;
-      height: 1.7em;
-      width: 1.7em;
-      outline: none; }
+      height: 1.5em;
+      width: 1.5em;
+      outline: none;
+      box-shadow: inset 0 0 1px 1px rgba(27, 27, 27, 0.2); }
+      @media screen and (min-width: 768px) {
+        .input-container .input .payment-method {
+          height: 1.9em;
+          width: 1.9em; } }
+      @media screen and (min-width: 1024px) {
+        .input-container .input .payment-method {
+          cursor: pointer; } }
       .input-container .input .payment-method:checked {
         background: #13C1BF;
         display: grid;
         align-items: center;
-        justify-items: center; }
+        justify-items: center;
+        border-color: #8DE5E3; }
         .input-container .input .payment-method:checked::after {
           content: "";
           display: block;
-          height: 0.7em;
-          width: 0.7em;
+          height: 0.6em;
+          width: 0.6em;
           border-radius: 50%;
           background: white; }
-  @media only screen and (min-width: 768px) {
-    .input-container {
-      width: 513px;
-      height: 297px; } }
+          @media screen and (min-width: 768px) {
+            .input-container .input .payment-method:checked::after {
+              height: 0.8em;
+              width: 0.8em; } }
 
 .output-container {
   font-size: 18px;
@@ -82,13 +110,32 @@
     .output-container .output label {
       font-weight: 400;
       color: #8F93C1; }
+      @media screen and (min-width: 768) {
+        .output-container .output label {
+          font-weight: 700; } }
     .output-container .output.multiple {
       grid-template-columns: 1.25fr 0.75fr; }
+      @media screen and (min-width: 480px) and (orientation: landscape) {
+        .output-container .output.multiple {
+          grid-template-columns: repeat(2, 1fr); } }
+      @media screen and (min-width: 768px) {
+        .output-container .output.multiple {
+          grid-template-columns: 2.7fr 2fr 0.5fr; } }
       .output-container .output.multiple .output {
         border: none;
         grid-template-columns: repeat(2, 1fr); }
+        @media screen and (min-width: 480px) and (orientation: landscape) {
+          .output-container .output.multiple .output {
+            grid-template-columns: 0.7fr 2fr; } }
+        @media screen and (min-width: 768px) {
+          .output-container .output.multiple .output {
+            grid-template-columns: 1.2fr 2fr; } }
     .output-container .output.card {
       grid-template-rows: 3rem 2rem; }
+      @media screen and (min-width: 768px) {
+        .output-container .output.card {
+          grid-template-columns: 0.75fr 2fr;
+          grid-template-rows: 1fr; } }
     .output-container .output.multiple .output {
       padding: 0; }
     .output-container .output input {
@@ -103,29 +150,48 @@
       font-size: 1em; }
       .output-container .output input::placeholder {
         color: #404477; }
+  @media screen and (min-width: 768px) {
+    .output-container {
+      height: 138px;
+      font-size: 19px;
+      font-weight: 700; } }
 
 .card {
   width: 2.5em;
   height: 1.72em;
   margin: 0 auto; }
+  @media screen and (min-width: 768px) {
+    .card {
+      margin: 0;
+      margin-left: auto; } }
   .card img {
     width: 100%;
     height: 100%; }
 
 .card-container {
   position: relative; }
+  @media screen and (min-width: 768px) {
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); } }
   .card-container span.mobile-card-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
     width: 100%;
     position: relative; }
+    @media screen and (min-width: 768px) {
+      .card-container span.mobile-card-wrapper {
+        display: none; } }
     .card-container span.mobile-card-wrapper i.material-icons {
       position: absolute;
       top: 20%;
       right: -10%;
       opacity: 0.5;
       transition: transform 0.4s; }
+      @media screen and (min-width: 480px) and (orientation: landscape) {
+        .card-container span.mobile-card-wrapper i.material-icons {
+          right: 15%; } }
       .card-container span.mobile-card-wrapper i.material-icons.opened {
         transform: rotate(-180deg); }
     .card-container span.mobile-card-wrapper .card {
@@ -133,6 +199,9 @@
       position: relative; }
   .card-container .card:not(.mobile) {
     display: none; }
+    @media screen and (min-width: 768px) {
+      .card-container .card:not(.mobile) {
+        display: block; } }
   .card-container .mobile-card-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -150,6 +219,9 @@
     overflow: hidden; }
     .card-container .mobile-card-list.opened {
       height: 7.8em; }
+    @media screen and (min-width: 768px) {
+      .card-container .mobile-card-list {
+        display: none; } }
 
 form button {
   max-height: 70px; }
@@ -162,9 +234,19 @@ form button {
     margin-top: 10%;
     font-size: 18px;
     font-weight: 700;
+    box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
     transition: 1s;
     background: #13C1BF;
     color: white; }
+    @media screen and (min-width: 480px) and (orientation: landscape) {
+      form button.button-card {
+        margin-top: 4%; } }
+    @media screen and (min-width: 768px) {
+      form button.button-card {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      form button.button-card {
+        cursor: pointer; } }
     form button.button-card i.material-icons {
       vertical-align: middle;
       margin-right: 0.5rem; }
@@ -177,9 +259,19 @@ form button {
     margin-top: 10%;
     font-size: 18px;
     font-weight: 700;
+    box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
     transition: 1s;
     background: #F8F7F5;
     padding: 0.5em 0; }
+    @media screen and (min-width: 480px) and (orientation: landscape) {
+      form button.button-paypal {
+        margin-top: 4%; } }
+    @media screen and (min-width: 768px) {
+      form button.button-paypal {
+        font-size: 20px; } }
+    @media screen and (min-width: 1024px) {
+      form button.button-paypal {
+        cursor: pointer; } }
   form button span {
     vertical-align: middle; }
 
@@ -209,5 +301,12 @@ button {
     color: #13C1BF;
     font-size: 1.6rem;
     font-weight: 400; }
+    @media screen and (min-width: 768px) {
+      .wrapper h1 {
+        font-size: 2.1em;
+        margin-bottom: 47px; } }
+  @media screen and (min-width: 768px) {
+    .wrapper {
+      width: 512px; } }
 
 /*# sourceMappingURL=app.css.map */
