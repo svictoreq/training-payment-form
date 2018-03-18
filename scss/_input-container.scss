@@ -1,52 +1,80 @@
 @import "variables";
 
 .input-container {
-  margin: 0 auto;
-  background: $dark-blue;
-  width: 90vw;
-  height: 67vh;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 700;
+  width: 100%;
+  height: 50%;
+  transition: height 0.5s;
+
+  @media only screen and (min-width: 768px) {
+    width: 513px;
+    height: 160px;
+  }
+
+  &.paypal {
+    height: 100%;
+
+    .input:last-child {
+      border: none;
+    }
+  }
 
   .input {
-    display: grid;
-    grid-template-columns: 12% 2fr 1fr;
-    align-items: center;
-    height: 25%;
-    padding: 0 5%;
-    cursor: default;
+    @include form-div;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 11% 1.3fr 1fr;
+    }
+
+    label {
+      @media screen and (min-width: 1024px) {
+        cursor: pointer;
+      }
+    }
 
     .payment-method {
       -webkit-appearance: none;
+      -moz-appearance: none;
+      appearace: none;
       position: relative;
-      border: 3px solid $lightest-blue;
+      background: #292c51;
       border-radius: 50%;
+      border: 2px solid $softer-blue;
       margin: 0;
-      height: 1.7em;
-      width: 1.7em;
+      height: 1.5em;
+      width: 1.5em;
       outline: none;
+      box-shadow: inset 0 0 1px 1px rgba(27, 27, 27, 0.2);
+
+      @media screen and (min-width: 768px) {
+        height: 1.9em;
+        width: 1.9em;
+      }
+
+      @media screen and (min-width: 1024px) {
+        cursor: pointer;
+      }
 
       &:checked {
         background: $light-blue;
         display: grid;
         align-items: center;
         justify-items: center;
+        border-color: $lightest-blue;
 
         &::after {
           content: "";
           display: block;
-          height: 0.7em;
-          width: 0.7em;
+          height: 0.6em;
+          width: 0.6em;
           border-radius: 50%;
           background: white;
+
+          @media screen and (min-width: 768px) {
+            height: 0.8em;
+            width: 0.8em;
+          }
         }
       }
     }
-  }
-
-  @media only screen and (min-width: 768px) {
-    width: 513px;
-    height: 297px;
   }
 }

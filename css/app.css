@@ -235,6 +235,7 @@ form button {
     font-size: 18px;
     font-weight: 700;
     box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
+    color: #242852;
     transition: 1s;
     background: #13C1BF;
     color: white; }
@@ -260,6 +261,7 @@ form button {
     font-size: 18px;
     font-weight: 700;
     box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
+    color: #242852;
     transition: 1s;
     background: #F8F7F5;
     padding: 0.5em 0; }

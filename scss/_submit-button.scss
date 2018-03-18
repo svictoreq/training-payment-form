@@ -1,22 +1,52 @@
 @import "variables";
 
+@mixin button {
+  width: 100%;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 0;
+  margin-top: 10%;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: $box-shadow;
+  color: $blue;
+  transition: 1s;
+
+  @media screen and (min-width: 480px) and (orientation: landscape) {
+    margin-top: 4%;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    cursor: pointer;
+  }
+}
+
 form {
   button {
-    width: 100%;
+    max-height: 70px;
 
-    // height: 68px
-    border: none;
-    border-radius: 5px;
-    padding: 1rem 0;
-    margin-top: 10%;
-    background: $light-blue;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
+    &.button-card {
+      @include button;
 
-    i.material-icons {
-      vertical-align: middle;
-      margin-right: 0.5rem;
+      background: $light-blue;
+      color: white;
+
+      i.material-icons {
+        vertical-align: middle;
+        margin-right: 0.5rem;
+      }
+    }
+
+    &.button-paypal {
+      @include button;
+
+      background: $pale-white;
+      padding: 0.5em 0;
     }
 
     span {

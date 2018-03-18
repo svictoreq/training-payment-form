@@ -11,3 +11,15 @@ $pale-white: #F8F7F5;
 // General variables
 $typeface: "Karla", sans-serif;
 $monotype: "Fira Mono", monospaced;
+$box-shadow: 0 0 1px 1px rgba(27, 27, 27, 0.1);
+
+@mixin form-div {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 12% 2fr 1fr;
+  align-items: center;
+  min-height: 50%;
+  padding: 0 5%;
+  cursor: default;
+  border-bottom: 1px solid $softer-blue;
+}

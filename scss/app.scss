@@ -1,15 +1,18 @@
 @import "variables";
+@import "container";
 @import "input-container";
+@import "output-container";
 @import "cards";
 @import "submit-button";
 
 body {
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
+  align-items: center;
   margin: 0;
   padding: 2rem 0;
   background: $background-blue;
@@ -31,5 +34,14 @@ button {
     color: $light-blue;
     font-size: 1.6rem;
     font-weight: 400;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.1em;
+      margin-bottom: 47px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 512px;
   }
 }

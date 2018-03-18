@@ -5,6 +5,11 @@
   height: 1.72em;
   margin: 0 auto;
 
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    margin-left: auto;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -14,6 +19,11 @@
 .card-container {
   position: relative;
 
+  @media screen and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   span.mobile-card-wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -21,12 +31,20 @@
     width: 100%;
     position: relative;
 
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
     i.material-icons {
       position: absolute;
       top: 20%;
       right: -10%;
       opacity: 0.5;
       transition: transform 0.4s;
+
+      @media screen and (min-width: 480px) and (orientation: landscape) {
+        right: 15%;
+      }
 
       &.opened {
         transform: rotate(-180deg);
@@ -42,6 +60,10 @@
   .card {
     &:not(.mobile) {
       display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
     }
   }
 
@@ -63,6 +85,10 @@
 
     &.opened {
       height: 7.8em;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: none;
     }
   }
 }
