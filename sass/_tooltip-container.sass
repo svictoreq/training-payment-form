@@ -1,0 +1,49 @@
+@import variables
+
+.tooltip-container
+	display: none
+
+	@media screen and (min-width: 768px)
+		display: block
+		width: 100%
+		height: 100%
+
+		.tooltip
+			position: relative
+			display: grid
+			align-items: center
+			justify-items: end
+			width: 100%
+			height: 100%
+			color: $light-blue
+			transition: color 0.1s ease
+
+			@media screen and (min-width: 1024px)
+				color: $softer-blue
+				&:hover
+					color: $light-blue
+
+				i.material-icons
+					cursor: pointer
+
+			.info
+				opacity: 0
+				display: none
+				position: absolute
+				height: 100%
+				width: 70px
+				left: 0
+				line-height: 70px
+				text-align: center
+				background: $blue
+				color: $light-blue
+				font:
+					size: 14px
+					weight: 100
+				transition: opacity 0.2s 0.1s
+
+				&.visible
+					opacity: 1
+					@media screen and (min-width: 1024px)
+						cursor: pointer
+

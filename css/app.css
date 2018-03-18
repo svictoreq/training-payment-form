@@ -281,6 +281,50 @@ form button {
   form button span {
     vertical-align: middle; }
 
+.tooltip-container {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .tooltip-container {
+      display: block;
+      width: 100%;
+      height: 100%; }
+      .tooltip-container .tooltip {
+        position: relative;
+        display: grid;
+        align-items: center;
+        justify-items: end;
+        width: 100%;
+        height: 100%;
+        color: #13C1BF;
+        transition: color 0.1s ease; } }
+    @media screen and (min-width: 768px) and (min-width: 1024px) {
+      .tooltip-container .tooltip {
+        color: #404477; }
+        .tooltip-container .tooltip:hover {
+          color: #13C1BF; }
+        .tooltip-container .tooltip i.material-icons {
+          cursor: pointer; } }
+  @media screen and (min-width: 768px) {
+        .tooltip-container .tooltip .info {
+          opacity: 0;
+          display: none;
+          position: absolute;
+          height: 100%;
+          width: 70px;
+          left: 0;
+          line-height: 70px;
+          text-align: center;
+          background: #242852;
+          color: #13C1BF;
+          font-size: 14px;
+          font-weight: 100;
+          transition: opacity 0.2s 0.1s; }
+          .tooltip-container .tooltip .info.visible {
+            opacity: 1; } }
+        @media screen and (min-width: 768px) and (min-width: 1024px) {
+          .tooltip-container .tooltip .info.visible {
+            cursor: pointer; } }
+
 body {
   box-sizing: border-box;
   width: 100%;

@@ -56,6 +56,21 @@ $(document).ready(function() {
 		}
 	});
 
+	// Tooltip
+	$('.tooltip i').on('click', function() {
+		$('.tooltip .info').css('display', 'block')
+		setTimeout(function() {
+			$('.tooltip .info').addClass('visible')
+		}, 50)
+	});
+
+	$('.tooltip .info').on('click', function() {
+		$(this).removeClass('visible');
+		setTimeout(() => {
+			$(this).css('display', 'none');
+		}, 200)
+	})
+
 	// Text manipulation
 	$('#card-number').mask('0000 0000 0000 0000')
 	$('#expiry').mask('MX/XX', {'translation': {
