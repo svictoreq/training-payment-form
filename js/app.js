@@ -36,4 +36,12 @@ $(document).ready(function() {
 		$(mobileCardList).toggleClass('opened');
 		$(icon).toggleClass('opened');
 	});
+
+	// Text manipulation
+	$('#card-number').mask('0000 0000 0000 0000')
+	$('#expiry').mask('MX/XX', {'translation': {
+		M: {pattern: /[0-1]/},
+		X: {pattern: /[0-9]/}
+	}});
+	$('cvc').mask('000');
 });
